@@ -2,14 +2,13 @@
   <div class="wrapper">
     <meetup-header />
     <main class="main">
-      <page-meetups />
+      <router-view />
     </main>
     <meetup-footer />
   </div>
 </template>
 
 <script>
-import PageMeetups from '@/components/PageMeetups';
 import MeetupHeader from '@/components/MeetupHeader.vue';
 import MeetupFooter from '@/components/MeetupFooter.vue';
 
@@ -19,7 +18,6 @@ export default {
   components: {
     MeetupFooter,
     MeetupHeader,
-    PageMeetups,
   },
 };
 </script>

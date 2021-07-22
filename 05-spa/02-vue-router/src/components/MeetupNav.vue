@@ -1,14 +1,23 @@
 <template>
   <nav class="nav">
-    <a href="/meetups" class="nav__link">&larr; Вернуться к списку</a>
-    <a href="/login" class="nav__link">Вход</a>
-    <a href="/meetups/create" class="nav__link">Создать митап</a>
+    <router-link v-if="showReturnToMeetups" :to="{ name: 'meetups' }" class="nav__link"
+      >&larr; Вернуться к списку</router-link
+    >
+    <router-link to="/" class="nav__link">Вход</router-link>
+    <router-link to="/" class="nav__link">Создать митап</router-link>
   </nav>
 </template>
 
 <script>
 export default {
   name: 'MeetupNav',
+
+  computed: {
+    showReturnToMeetups() {
+      // this.$route.meta имеет смерженные объекты meta со всех маршрутов от
+      return this.$route.meta.showReturnToMeetups;
+    },
+  },
 };
 </script>
 
